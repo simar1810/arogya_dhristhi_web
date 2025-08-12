@@ -285,20 +285,7 @@ export const wellnessResults = [
     review:
       '"I lost 17 Kgs of weight with truefit. It was a life-changing experience, I now feel more healthy and fit than ever before!"',
   },
-  {
-    i: 16,
-    img: "/result9.jpg",
-    name: "Anil Malhotra",
-    review:
-      '"I lost 17 Kgs of weight with truefit. It was a life-changing experience, I now feel more healthy and fit than ever before!"',
-  },
-  {
-    i: 17,
-    img: "/result10.jpg",
-    name: "Anil Malhotra",
-    review:
-      '"I lost 17 Kgs of weight with truefit. It was a life-changing experience, I now feel more healthy and fit than ever before!"',
-  },
+  
 
   // {
   //   i: 3,

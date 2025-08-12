@@ -37,7 +37,7 @@ export default async function FreeTrialClient() {
             width={220}
             height={760}
             alt="logo of zen fit"
-            className="h-[150px] w-[236px] object-contain -ml-8"
+            className="h-[150px] w-[236px] object-contain -ml-8 bg-white"
           />
           <h1 className="max-w-[18ch] text-[36px] lg:text-[50px] font-semibold leading-[1.2] mt-[40px] lg:mt-[80px]">
             Flow Into Wellness - One Step at a Time

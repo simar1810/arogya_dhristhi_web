@@ -36,7 +36,7 @@ export default function FreeTrialCustomerModal({ referralCode, sponsoredBy }) {
           mobileNumber: data.phoneNumber,
           email: data.email,
           dob: "01-01-2000",
-          coachID: "kkn100"
+          coachID: "new781"
         }))
       )
 

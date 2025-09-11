@@ -407,7 +407,13 @@ export default async function FreeTrialClient() {
                 href="mailto:deepikavirender14@gmail.com"
                 className="opacity-60 flex items-center gap-3"
               >
-                <IoMailOpen></IoMailOpen>
+                <IoMailOpen>deepikavirender14@gmail.com</IoMailOpen>
+              </Link>
+              <Link
+                href="tel:+919999181236"
+                className="opacity-60 flex items-center gap-3"
+              >
+                <FaPhoneAlt /> +91 9999181236
               </Link>
               <Link
                 href="tel:+919999181236"

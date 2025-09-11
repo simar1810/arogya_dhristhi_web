@@ -404,16 +404,16 @@ export default async function FreeTrialClient() {
             <div className="flex flex-col gap-3">
               <h1 className="md:mb-4 opacity-100 font-bold">Contact us</h1>
               <Link
-                href="mailto:d.com"
+                href="mailto:deepikavirender14@gmail.com"
                 className="opacity-60 flex items-center gap-3"
               >
                 <IoMailOpen></IoMailOpen>
               </Link>
               <Link
-                href="tel:"
+                href="tel:+919999181236"
                 className="opacity-60 flex items-center gap-3"
               >
-                <FaPhoneAlt /> +91 
+                <FaPhoneAlt /> +91 9999181236
               </Link>
              
               {/* <div className="max-w-[60ch] opacity-60 flex items-center gap-3"><FaLocationDot />10540/1 Street no.9 Pratap Nagar near Bhagwan Chowk Ludhiana-141003</div> */}
@@ -449,7 +449,7 @@ export default async function FreeTrialClient() {
               <span className="px-2 opacity-70">All Rights Reserved</span>
               <div className="text-[0.7rem] md:text-[0.8rem]">
                 <Link
-                  href="/terms"
+                  href="/terms-and-conditions"
                   className="text-[var(--accent-1)] px-2 border-x-2 cursor-pointer border-gray-500"
                 >
                   Terms and Conditions

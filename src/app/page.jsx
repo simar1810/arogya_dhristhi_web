@@ -407,7 +407,8 @@ export default async function FreeTrialClient() {
                 href="mailto:deepikavirender14@gmail.com"
                 className="opacity-60 flex items-center gap-3"
               >
-                <IoMailOpen>deepikavirender14@gmail.com</IoMailOpen>
+                <IoMailOpen />
+                deepikavirender14@gmail.com
               </Link>
               <Link
                 href="tel:+919999181236"
@@ -416,10 +417,10 @@ export default async function FreeTrialClient() {
                 <FaPhoneAlt /> +91 9999181236
               </Link>
               <Link
-                href="tel:+919999181236"
+                href="tel:+919999181036"
                 className="opacity-60 flex items-center gap-3"
               >
-                <FaPhoneAlt /> +91 9999181236
+                <FaPhoneAlt /> +91 9999181036
               </Link>
              
               {/* <div className="max-w-[60ch] opacity-60 flex items-center gap-3"><FaLocationDot />10540/1 Street no.9 Pratap Nagar near Bhagwan Chowk Ludhiana-141003</div> */}

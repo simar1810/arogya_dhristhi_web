@@ -13,18 +13,20 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 import { IoCheckmarkCircle, IoMailOpen } from "react-icons/io5";
 import {
   FaBuilding,
-  FaFacebookF,
   FaInstagram,
   FaMap,
   FaPhoneAlt,
   FaRegEnvelope,
   FaTelegram,
-  FaTwitter,
   FaWhatsapp,
 } from "react-icons/fa";
 import { CiLink } from "react-icons/ci";
 import { FaLocationDot, FaMapLocation } from "react-icons/fa6";
 import FreeTrialCustomerModal from "@/components/core/FreeTrialCustomerModal";
+import { FaSquareInstagram } from "react-icons/fa6";
+import { FaFacebookF } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaYoutube } from "react-icons/fa6";
 
 export default async function FreeTrialClient() {
   return (
@@ -37,7 +39,7 @@ export default async function FreeTrialClient() {
             width={220}
             height={760}
             alt="logo of zen fit"
-            className="h-[150px] w-[236px] object-contain -ml-8 bg-white"
+            className="h-[150px] w-[236px] object-contain py-2 bg-slate-300 rounded-2xl"
           />
           <h1 className="max-w-[18ch] text-[36px] lg:text-[50px] font-semibold leading-[1.2] mt-[40px] lg:mt-[80px]">
             Flow Into Wellness - One Step at a Time
@@ -422,7 +424,32 @@ export default async function FreeTrialClient() {
               >
                 <FaPhoneAlt /> +91 9999181036
               </Link>
-             
+              <div className="flex items-center justify-start gap-4">
+                <Link
+                href="https://www.instagram.com/deepikavirender_?igsh=MWk3Zzk0c2ZibTY2ag%3D%3D"
+                className="opacity-60 flex items-center gap-3"
+              >
+                <FaSquareInstagram />
+                </Link>
+                <Link
+                href="https://www.facebook.com/share/1EbUkyN3Jh/?mibextid=wwXIfr"
+                className="opacity-60 flex items-center gap-3"
+              >
+                <FaFacebookF  /> 
+                </Link>
+                <Link
+                href="https://x.com/arogyadrishtii?s=21"
+                className="opacity-60 flex items-center gap-3"
+              >
+                <FaXTwitter />
+                </Link>
+                <Link
+                href="https://youtube.com/@arogyadrishti?si=zMnUCVeL3Et9Pueg"
+                className="opacity-60 flex items-center gap-3"
+              >
+                <FaYoutube />
+                </Link>
+             </div>
               {/* <div className="max-w-[60ch] opacity-60 flex items-center gap-3"><FaLocationDot />10540/1 Street no.9 Pratap Nagar near Bhagwan Chowk Ludhiana-141003</div> */}
              
             </div>

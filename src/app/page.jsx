@@ -27,12 +27,20 @@ import { FaSquareInstagram } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa6";
+import { GoLaw } from "react-icons/go";
+import { GiThreeLeaves } from "react-icons/gi";
+import { FaHeartbeat } from "react-icons/fa";
 
 export default async function FreeTrialClient() {
+  const heroProfiles = [
+    "/profile.webp",
+    "/profile.webp",
+    "/profile.webp",
+  ]
   return (
     <div className="">
       {/* HERO SECTION STARTSx */}
-      <div className="h-[40vh] sm:h-[50vh] md:h-[75vh] lg:h-[95vh] bg-[url('/s1.png')] bg-cover bg-top-center p-8">
+      {/* <div className="h-[40vh] sm:h-[50vh] md:h-[75vh] lg:h-[95vh] bg-[url('/s1.png')] bg-cover bg-top-center p-8">
         <div className="max-w-[1200px] h-full bg-red- 200 text-white mx-auto px-8 hidden md:flex flex-col items-start">
           <Image
             src="/logo-large-light.png"
@@ -72,8 +80,8 @@ export default async function FreeTrialClient() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="px-[16px] py-[12px] md:hidden">
+      </div> */}
+      {/* <div className="px-[16px] py-[12px] md:hidden">
         <h1 className="text-[24px] sm:text-[40px] font-bold leading-[1.2]">
           Flow Into Wellness - One Step at a Time
         </h1>
@@ -104,17 +112,54 @@ export default async function FreeTrialClient() {
             <p className="text-[8px]">Customer Satisfaction Rate</p>
           </div>
         </div>
+      </div> */}
+      <div className="relative min-h-screen bg-[url('/yoga_girl.png')] bg-cover pt-20 md:pt-28 lg:pt-12 flex justify-start">
+        <div className="absolute inset-0 backdrop-brightness-100"></div>
+        <div className="relative flex flex-col lg:w-1/2 justify-between items-start">
+          <div className="text-center lg:text-left px-5 lg:pl-16 my-20 xl:pl-20 xl:my-20 md:mx-auto lg:mx-0">
+            <p className="text-2xl md:text-5xl lg:text-[3vw] xl:text-[2.7vw] font-bold mb-6 md:mb-[6vw] lg:mb-6 xl:mb-6 text-zinc-700">Mindfulness Made Easy</p>
+            <p className="mb-6 md:mb-[7vw] lg:mb-6 xl:mb-8 text-sm md:text-3xl lg:text-[1.5vw] xl:text-lg text-zinc-600 md:max-w-2xl md:mx-auto lg:mx-0 lg:max-w-xs lg:leading-5 xl:max-w-sm">
+        From soothing bath products to calming essential oils, our collection offers everything you need to create peaceful sanctuary in your own home
+            </p>
+            <div className="flex gap-4 xl:gap-6 justify-center lg:justify-start items-center">
+              <button className="text-white bg-sky-600 text-xs md:text-xl lg:text-sm xl:text-sm px-4 py-3 xl:px-6 xl:py-4 rounded-md font-semibold">SHOP NOW</button>
+              <button className="text-gray-900 bg-gray-400 text-xs md:text-xl lg:text-sm xl:text-sm px-4 py-3 xl:px-6 xl:py-4 rounded-md font-semibold">Start Your Journey</button>
+            </div>
+          </div>
+          <div className="bg-sky-300 px-5 pt-10 pb-5 md:px-14 md:py-20 lg:px-16 lg:py-8 xl:pl-20 xl:py-14 w-full lg:rounded-tr-3xl ring-1 ring-white relative">
+            <Image src="/quote.png" alt="quote" width={500} height={500} className="hidden lg:block w-16 xl:w-20 absolute top-[-43px] xl:top-[-52px] right-10"/>
+            <div className="flex flex-col lg:flex-row justify-start items-center lg:justify-center lg:item-start gap-4">
+              <div className="flex relative w-1/2 lg:w-32 xl:w-28 items-center justify-center lg:justify-start mt-2 lg:mt-0">
+                <Image src="/Ellipse4.png" alt="profile" width={500} height={500} className="w-14 md:w-24 lg:w-32 xl:w-40 rounded-full ring-1 ring-blue-600 absolute left-[5vw] lg:left-0 xl:left-0 xl:top-[-60px]"/>
+                <Image src="/Ellipse5.png" alt="profile" width={500} height={500} className="w-14 md:w-24 lg:w-32 xl:w-40 rounded-full ring-1 ring-blue-600 absolute left-[14vw] lg:left-6 xl:left-10 xl:top-[-60px]"/>
+                <Image src="/Ellipse6.png" alt="profile" width={500} height={500} className="w-14 md:w-24 lg:w-32 xl:w-40 rounded-full ring-1 ring-blue-600 absolute left-[23vw] lg:left-12 xl:left-20 xl:top-[-60px]"/>
+              </div>
+              <p className="text-gray-900 w-full lg:max-w-md xl:max-w-xs text-xs md:text-xl lg:text-[0.8rem] xl:text-[1.05rem] font-medium lg:relative xl:ml-32 lg:ml-20 mt-8 md:mt-14 lg:mt-0 text-center lg:text-left lg:leading-5 xl:leading-6">I have been using Arogya Dhristi products for months now, and they have truly transformed my daily life. I feel calmer, more focused, and overall happier.</p>
+            </div>
+          </div>
+        </div>
+        <div className="hidden lg:flex flex-col justify-start items-center pt-16 gap-14 xl:pt-20 xl:gap-16 lg:w-1/2">
+          <div className="rounded-full bg-white ring-2 ring-purple-400 w-24 h-24 xl:w-28 xl:h-28 flex items-center justify-center">
+            <GiThreeLeaves size={70} className="text-purple-400" />
+          </div>
+          <div className="rounded-full bg-white ring-2 ring-purple-400 w-24 h-24 xl:w-28 xl:h-28 flex items-center justify-center">
+            <GoLaw size={70} className="text-purple-400" />
+          </div>
+          <div className="rounded-full pt-2 bg-white ring-2 ring-purple-400 w-24 h-24 xl:w-28 xl:h-28 flex items-center justify-center">
+            <FaHeartbeat size={70} className="text-purple-400" />
+          </div>
+        </div>
       </div>
       {/* HERO SECTION ENDS */}
 
       {/* HOW IT WORKS SECTION STARTS */}
-      <div className="w-full bg-[var(--accent-1)] text-white flex justify-center items-center p-4 pt-8 pb-28 md:p-[4rem] md:pb-32 relative">
+      <div className="w-full bg-[var(--accent-1)] text-white flex justify-center items-center p-4 pt-8 pb-28 md:p-[4rem] md:pb-32 xl:pb-20 relative">
         <div className="max-w-[1200px] mx-auto lg:flex flex-row justify-between items-start">
-          <div className="w-full text-left mb-[40px] z-20">
+          <div className="w-full text-center xl:text-left mb-[40px] z-20 relative">
             <h1 className="text-[32px] md:text-[50px] font-semibold leading-[1] mb-[8px] md:mb-[14px]">
               How it Works
             </h1>
-            <p className="text-[12px] md:text-[20px] text-[#D9D9D9] mb-[12px] md:mb-[20px]">
+            <p className="text-[12px] md:text-[20px] max-w-md text-[#D9D9D9] mb-[12px] md:mb-[20px]">
               See how we understand your problem and make the best suitable plan
               for you
             </p>
@@ -124,6 +169,17 @@ export default async function FreeTrialClient() {
             >
               Start Free Today
             </Link>
+            <div className="flex justify-center xl:absolute xl:left-[-50px]">
+                <Image
+                  src="/logo-large-light.png"
+                  className="mt-5 w-[120px] lg:w-3xl xl:w-60 object-bottom object-contain"
+                  height={548}
+                  width={548}
+                alt="lightened image of zen fit logo"
+                />
+            </div>
+
+
           </div>
 
           <div className="max-w-[600px] w-full">
@@ -150,13 +206,6 @@ export default async function FreeTrialClient() {
               </div>
             ))}
           </div>
-          <Image
-            src="/logo-large-light.png"
-            className="absolute w-[120px] lg:w-[350px] aspect-square bottom-5 left-1/2 lg:left-0 translate-x-[-50%] lg:translate-x-[0%] xl:translate-x-[10%] object-bottom object-contain"
-            height={548}
-            width={548}
-            alt="lightened image of zen fit logo"
-          />
         </div>
       </div>
       {/* HOW IT WORKS SECTION ENDS */}
@@ -169,7 +218,7 @@ export default async function FreeTrialClient() {
         <h2 className="text-[24px] md:text-[48px] font-semibold text-center leading-[1.2] mb-[8px] md:mb-[12px]">
           Your Trusted Partner in Health
         </h2>
-        <p className="max-w-[60ch] text-[10px] md:text-[14px] text-center mx-auto mb-[12px] md:mb-[16px]">
+        <p className="max-w-[60ch] text-sm md:text-[14px] text-center mx-auto mb-[12px] md:mb-[16px]">
           Arogya Drishti combines the power of science-backed nutrition with
           personalized guidance to help you reclaim your health and live healthy
           life.
@@ -179,11 +228,11 @@ export default async function FreeTrialClient() {
             Download Now
           </button>
         </Link> */}
-        <div className="md:max-w-[1400px] w-full flex flex-wrap justify-center items-start gap-y-8 gap-3 mt-8">
+        <div className="md:max-w-[1400px] w-full flex flex-wrap justify-center items-start gap-y-8 gap-5 mt-8">
           {trustedPartners.map((item, index) => (
             <div
               key={index}
-              className={`w-[48%] md:max-w-[23%] flex flex-col items-center cursor-pointer relative ${
+              className={`rounded-2xl shadow-md shadow-slate-300 px-4 py-6 bg-gray-50 w-full md:max-w-[23%] flex flex-col items-center cursor-pointer relative ${
                 index === 0
                   ? "md:mt-0"
                   : index === 1
@@ -198,17 +247,17 @@ export default async function FreeTrialClient() {
                 alt=" "
                 width={279}
                 height={256}
-                className="w-full object-cover"
+                className="w-full object-cover rounded-xl"
               />
               <div
-                className={`w-full bg-white rounded-b-xl text-center leading-[1.2] px-3 pb-2 ${
+                className={`w-full pt-4 rounded-b-xl text-center leading-[1.2] px-3 pb-2 ${
                   index === 3 && "hidden"
                 }`}
               >
-                <h1 className="text-[12px] sm:text-[16px] md:text-[20px] font-semibold mt-2">
+                <h1 className="text-xl md:text-[20px] font-semibold mt-2">
                   {item.h}
                 </h1>
-                <p className="text-[9px] sm:text-[11px] md:text-[12px] text-gray-500 mt-[4px]">
+                <p className="text-base sm:text-[11px] md:text-[12px] text-gray-500 mt-[4px]">
                   {item.d}
                 </p>
               </div>
@@ -225,7 +274,7 @@ export default async function FreeTrialClient() {
       {/* CLASSES SECTION STARTS */}
       <div className="hidden w-full h-full bg-[url('/s4.jpeg')] bg-right-bottom bg-cover md:flex flex-col justify-center items-start px-[40px] py-[4rem] gap-6">
         <div className="max-w-[1200px] mx-auto">
-          <h1 className="text-[28px] md:text-[55px] font-extrabold text-left leading-[1.2] text-gray-900">
+          <h1 className="text-[28px] md:text-[55px] xl:text-5xl font-extrabold text-left leading-[1.2] text-gray-900 mb-4">
             Classes for Every Level <br /> and Intention
           </h1>
           <p className="text-[12px] md:text-[20px] text-gray-700 md:max-w-[60ch] xl:max-w-[35%] text-left">
@@ -247,10 +296,10 @@ export default async function FreeTrialClient() {
                     className="w-[35px]"
                   />
                 </div>
-                <h1 className="text-[30px] md:text-[1.3rem] font-semibold mt-2 leading-[1.2] text-gray-900">
+                <h1 className="text-[30px] md:text-base font-semibold mt-2 text-gray-900">
                   {item.h}
                 </h1>
-                <p className="text-[14px] text-gray-600 font-semibold leading-[1.4]">
+                <p className="text-sm text-gray-600 font-medium">
                   {item.d}
                 </p>
               </div>
@@ -260,22 +309,25 @@ export default async function FreeTrialClient() {
       </div>
 
       <div className="md:hidden">
-        <div className="w-full h-full bg-[url('/s4.jpeg')] bg-right-bottom bg-cover flex flex-col justify-center items-start px-6 md:px-[4rem] pt-[120px] pb-[50px] gap-4">
-          <h1 className="text-[24px] font-extrabold leading-[1.2] text-left text-gray-900 mt-12">
+        <div className="w-full h-full bg-[url('/s4.jpeg')] bg-right-bottom bg-cover flex flex-col justify-center items-start px-6 md:px-[4rem] pb-[50px] gap-4">
+          <h1 className="text-xl font-extrabold leading-[1.2] text-left text-gray-900 mt-12">
             Classes for Every Level <br /> and Intention
           </h1>
-          <p className="text-[12px] max-w-[60ch] text-left text-gray-700">
+          <p className="text-sm w-52 text-left text-gray-700">
             From beginner-friendly sessions to advanced health workshops, our
             programs are designed to meet you where you are.
           </p>
         </div>
-        <div className="w-full flex flex-wrap justify-between gap-2 p-4 my-5">
+        <div className="w-full flex flex-col justify-between gap-5 p-4 my-5">
           {classSection.map((item, index) => (
             <div
               key={index}
-              className="w-[48%] rounded-xl bg-white text-left p-5 gap-2 cursor-pointer shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105"
+              className={`rounded-xl text-left p-5 gap-2 cursor-pointer shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 w-full 
+        ${index % 2 === 0 ? 'bg-white' : 'bg-blue-50'}`}
             >
-              <div className="bg-gray-100 w-[60px] h-[60px] md:w-[50px] md:h-[50px] rounded-xl flex justify-center items-center mb-4 shadow-md border border-gray-300">
+              <div className={`${
+          index % 2 === 0 ? 'bg-gray-100 border-gray-300' : 'bg-blue-100 border-blue-300'
+        } w-[60px] h-[60px] md:w-[50px] md:h-[50px] rounded-xl flex justify-center items-center mb-4 shadow-md border`}>
                 <Image
                   src={item.i}
                   alt=" "
@@ -284,10 +336,10 @@ export default async function FreeTrialClient() {
                   className="w-[30px]"
                 />
               </div>
-              <h1 className="text-[19px] font-semibold leading-[1.2] my-2 text-gray-900">
+              <h1 className="text-base font-semibold leading-[1.2] my-2 text-gray-900">
                 {item.h}
               </h1>
-              <p className="text-[13px] font-semibold leading-[1.3] text-gray-600">
+              <p className="text-sm font-medium text-gray-500">
                 {item.d}
               </p>
             </div>
@@ -298,26 +350,26 @@ export default async function FreeTrialClient() {
       {/* CLASSES SECTION ENDS */}
 
       {/* WHY CHOOSE SECTION STARTS */}
-      <div className="bg-gradient-to-tr from-[#f0fff4] via-[#eafff0] to-[#f0fff4] px-4 py-[3rem] w-full">
-        <h2 className="text-[24px] md:text-[48px] font-semibold text-center leading-[1.2] mb-[8px] md:mb-[12px]">
+      <div className="bg-gradient-to-tr from-[#f0fff4] via-[#eafff0] to-[#f0fff4] px-4 pt-[5rem] pb-[2rem] w-full">
+        <h2 className="text-2xl md:text-[48px] font-semibold text-center leading-[1.2] mb-[8px] md:mb-[12px]">
           Why Choose Arogya Drishti
         </h2>
-        <p className="max-w-[60ch] text-[10px] md:text-[14px] text-center text-[#00000080] mx-auto mb-[12px] md:mb-[16px]">
+        <p className="text-base md:text-[14px] xl:text-base text-center text-[#00000080] mx-auto mb-[12px] md:mb-[16px] xl:mb-5">
           Why you should choose us. Start a step-by-step journey with the
           support of experts and a like-minded community.
         </p>
         <Link href="#register">
-          <button className="rounded-full text-white bg-[var(--accent-2)] text-[10px] md:text-[16px] font-semibold block mx-auto py-2 px-4">
+          <button className="rounded-full text-white bg-[var(--accent-2)] text-sm md:text-[16px] xl:text-base font-semibold block mx-auto py-2 px-6">
             Join us Today
           </button>
         </Link>
-        <div className="max-w-[1200px] mx-auto flex flex-wrap justify-center items-start gap-y-8 gap-x-3 mt-8">
+        <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row md:flex-wrap justify-center items-start gap-x-4 gap-y-2 md:gap-y-8 md:gap-x-3 xl:gap-x-6 mt-8">
           {whyChooseSection.map((item, index) => (
             <div
               key={index}
-              className="w-[calc(50%-8px)] md:w-[calc(33%-24px)] leading-[1.2] text-center mt-4"
+              className="w-full md:w-[calc(33%-24px)] leading-[1.2] text-center mt-4 rounded-2xl ring-[1px] ring-zinc-300 py-6 px-4 shadow-md shadow-zinc-200 md:h-[250px] bg-slate-50"
             >
-              <div className="bg-white w-[100px] h-[100px] rounded-[24px] mx-auto flex justify-center items-center shadow-xl">
+              <div className="bg-transparent w-[100px] h-[100px] rounded-[24px] mx-auto flex justify-center items-center shadow-sm shadow-zinc-200">
                 <Image
                   src={item.i}
                   alt=" "
@@ -326,10 +378,10 @@ export default async function FreeTrialClient() {
                   className="w-[64px] fill-black"
                 />
               </div>
-              <h1 className="text-[12px] md:text-[20px] font-semibold my-2">
+              <h1 className="text-base md:text-[20px] xl:text-base font-semibold mt-4 mb-2">
                 {item.h}
               </h1>
-              <p className="text-[10px] md:text-[16px] text-[#00000080]">
+              <p className="text-sm md:text-[16px] xl:text-base text-[#00000080]">
                 {item.d}
               </p>
             </div>
@@ -343,17 +395,17 @@ export default async function FreeTrialClient() {
       {/* SUBSCRIPTION PLANS SECTION ENDS */}
       {/* Products */}
       {/* CONNECT SECTION STARTS */}
-      <div className="bg-gradient-to-tr from-[#f0fff4] via-[#eafff0] to-[#f0fff4] flex flex-col justify-center items-center px-4 pt-[20px] pb-[48px] md:py-[80px] gap-3 w-full relative overflow-hidden">
-        <h1 className="max-w-[24ch] text-[20px] md:text-[48px] text-center font-bold mx-auto">
+      <div className="bg-gradient-to-tr from-[#f0fff4] via-[#eafff0] to-[#f0fff4] flex flex-col justify-center items-center px-4 pt-[20px] pb-[48px] md:py-[80px] xl:pb-40 gap-3 w-full relative overflow-hidden">
+        <h1 className="text-lg md:text-[48px] xl:text-5xl md:mb-5 text-center font-bold mx-auto">
           Connect, Grow, and Thrive Together
         </h1>
-        <p className="text-[8px] md:text-[14px] max-w-[60ch] text-center mx-auto">
+        <p className="text-sm md:text-[14px] xl:text-base md:mb-2 max-w-[60ch] md:max-w-[80ch] text-center mx-auto">
           Join a thriving community of individuals committed to managing and
           improve health. Share experiences, learn together, and grow stronger.
         </p>
         <Link
           href="https://wa.me/1234567890"
-          className="text-[8px] md:text-[16px] font-semibold rounded-full text-white bg-[var(--accent-2)] py-2 px-4"
+          className="text-sm md:text-[16px] xl:text-xl shadow-md font-semibold rounded-full text-white bg-[var(--accent-2)] py-2 px-4 md:px-8 md:py-4"
         >
           Join the Community
         </Link>
@@ -383,14 +435,14 @@ export default async function FreeTrialClient() {
       {/* FOOTER STARTS */}
       <footer className="w-full bg-white pb-4 px-[20px]">
         <div className="max-w-[1200px] mx-auto">
-          <div className="flex gap-20 md:gap-6 lg:gap-0 flex-wrap justify-between py-12 ">
+          <div className="flex gap-4 md:gap-6 lg:gap-0 flex-wrap justify-between py-10 md:py-12 ">
             <div className="">
               <Image
                 src="/logo-large-light.png"
                 alt="zen fit"
                 width={236}
                 height={150}
-                className="mb-4"
+                className="mb-2 md:mb-4 w-36 md:w-52"
               />
               <div className="flex gap-6 cursor-pointer text-[2rem] text-[var(--accent-2)] ">
                 
@@ -403,7 +455,7 @@ export default async function FreeTrialClient() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col items-start gap-3">
               <h1 className="md:mb-4 opacity-100 font-bold">Contact us</h1>
               <Link
                 href="mailto:deepikavirender14@gmail.com"
@@ -476,7 +528,7 @@ export default async function FreeTrialClient() {
           </p>
 
           <div className="flex flex-col md:flex-row gap-2 items-center justify-between border-t-2 pt-4 border-gray-500">
-            <p className="opacity-60">
+            <p className="opacity-60 text-sm md:text-base lg:">
               Copyright © 2023 Mohi Lifestile Solutions Pvt Ltd.
             </p>
             <div className="flex flex-col md:flex-row gap-2 items-center justify-center">

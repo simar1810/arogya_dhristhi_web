@@ -59,10 +59,10 @@ export default function FreeTrialCustomerModal({ referralCode, sponsoredBy }) {
   />
 
   return <form id="register" onSubmit={createCustomer} className="w-full mx-auto py-8 md:py-20 rounded-md relative px-[20px]">
-    <div className="max-w-[1200px] w-full bg-[#FAF8F8] mx-auto px-8 py-4 rounded-[24px] border-[1px] border-[var(--accent-1)]">
+    <div className="max-w-[1200px] w-full bg-[#FAF8F8] mx-auto px-8 py-10 rounded-[24px] border-[1px] border-[var(--accent-1)]">
       <h2 className="text-[20px] md:text-[24px] font-bold">Let&apos;s Know You Better</h2>
-      <div className=" grid md:grid-cols-2 gap-x-4">
-        <FormControl title="Name" placeholder="Enter Your Name" name="name" />
+      <div className=" grid md:grid-cols-2 gap-x-6">
+        <FormControl  title="Name" placeholder="Enter Your Name" name="name" />
         <FormControl title="Phone" placeholder="Enter Your Phone" name="phoneNumber" />
         <FormControl title="Email" placeholder="Enter Your Email" name="email" />
         <FormControl title="What is your goal" placeholder="What is your goal" name="goal" />
@@ -74,9 +74,9 @@ export default function FreeTrialCustomerModal({ referralCode, sponsoredBy }) {
 
 function FormControl({ title, className, ...props }) {
   return <label className={`text-[14px] block my-4 ${className}`}>
-    <span className="cursor-pointer font-bold">{title}</span>
+    <span className="cursor-pointer font-bold text-zinc-600">{title}</span>
     <input type={props.text || "text"}
-      className="input w-full mt-2 px-4 py-[10px] rounded-[8px] focus:outline-none shado w-2xl shadow-red"
+      className="input ring-[1px] ring-zinc-200 shadow-md shadow-zinc-200 w-full mt-2 px-4 py-[10px] rounded-[8px] focus:outline-none w-2xl"
       {...props}
     />
   </label>

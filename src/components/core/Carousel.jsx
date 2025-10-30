@@ -58,16 +58,15 @@ export default function Carousel() {
   };
 
   return (
-    <div className="w-full flex flex-col p-4 md:p-[3rem] bg-gradient-to-tr from-[#FF61001A] via-[#16BA980D] to-[#0062311A] relative">
+    <div className="w-full flex flex-col p-4 pt-20 md:pt-32 bg-gradient-to-tr from-[#FF61001A] via-[#16BA980D] to-[#0062311A]">
       <div className="w-full flex justify-between">
-        <div className="w-[30%] hidden md:block"></div>
-        <div className="w-full md:w-[60%] flex flex-col gap-3 mt-[5rem] z-30 md:absolute top-15 right-5">
-          <h1 className="text-4xl font-semibold text-center ml-[-16rem] w-full">
+        <div className="w-full md:w-[60%] mx-auto flex flex-col gap-3 z-30">
+          <h1 className="text-2xl md:text-4xl font-semibold text-center w-full">
             Wellness from Our Thriving Community
           </h1>
-          <div className="flex gap-4 items-center">
-            <div className="flex gap-2 justify-start items-center">
-              <button
+          <div className="flex gap-4 items-center justify-center">
+            <div className="flex gap-2 justify-center items-center">
+              {/* <button
                 onClick={prev}
                 className="w-8 h-8 flex justify-center items-center border border-black rounded-full bg-white shadow-md hover:bg-gray-200 transition-all"
               >
@@ -78,9 +77,9 @@ export default function Carousel() {
                 className="w-8 h-8 flex justify-center items-center border border-black rounded-full bg-white shadow-md hover:bg-gray-200 transition-all"
               >
                 &#8594;
-              </button>
+              </button> */}
             </div>
-            <p className="text-[0.7rem] max-w-[40ch]">
+            <p className="text-base xl:text-lg text-center text-zinc-600">
               Experience the best wellness transformations through our
               community-driven support and personal coaching.
             </p>
@@ -91,20 +90,20 @@ export default function Carousel() {
       <Slider
         ref={sliderRef}
         {...settings}
-        className="w-full max-w-[1200px] mx-auto [&_.slick-track]:flex [&_.slick-track]:items-end pt-[40px] md:pt-[120px] lg:py-[1rem] gap-2 overflow-visible md:mt-64"
+        className="w-full max-w-[1200px] mx-auto [&_.slick-track]:flex [&_.slick-track]:items-end gap-2 overflow-visible mt-10 md:mt-20"
       >
         {wellnessResults.map((item, index) => {
           return (
             <div
               key={item.i}
-              className={`pr-4 transition-all duration-700 ease-in-out transform mt-auto`}
+              className={`flex items-center gap-5 transition-all duration-700 ease-in-out transform mt-auto rounded-xl`}
             >
               <Image
                 src={item.img}
                 alt=""
                 width={419}
                 height={443}
-                className={`w-full aspect-square rounded-xl transition-all duration-700 ease-in-out transform object-contain origin-bottom`}
+                className={`w-full aspect-square transition-all duration-700 ease-in-out transform object-contain origin-bottom rounded-2xl`}
               />
               {/* {index === activeIndex && <div className={"bg-[var(--accent-1)] rounded-xl flex flex-col px-4 py-2 md:p-4 text-white mt-4 md:mt-8 transition-all duration-700 ease-in-out "}>
                                 <h1 className='font-semibold font-serif text-[12px] md:text-[24px]'>{item.name}</h1>
@@ -114,8 +113,8 @@ export default function Carousel() {
           );
         })}
       </Slider>
-      <p className="font-bold text-center">
-        Disclaimer: Results are not typical Individual results may vary
+      <p className="font-medium text-center mt-8 mb-20 md:mb-32 text-sm md:text-base xl:text-xl italic text-zinc-400">
+        <span className="font-semibold">Disclaimer:</span> Results are not typical Individual results may vary
       </p>
     </div>
   );

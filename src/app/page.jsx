@@ -1,3 +1,4 @@
+"use client"
 import Carousel from "@/components/core/Carousel";
 import {
   classSection,
@@ -30,13 +31,33 @@ import { FaYoutube } from "react-icons/fa6";
 import { GoLaw } from "react-icons/go";
 import { GiThreeLeaves } from "react-icons/gi";
 import { FaHeartbeat } from "react-icons/fa";
+import { useRef, useState, useEffect } from "react";
 
-export default async function FreeTrialClient() {
+export default function FreeTrialClient() {
   const heroProfiles = [
     "/profile.webp",
     "/profile.webp",
     "/profile.webp",
   ]
+  const testimonials = [
+  "I have been using Arogya Dhristi products for months now, and they have truly transformed my daily life. I feel calmer, more focused, and overall happier.",
+  "Arogya Dhristi has completely changed the way I approach wellness. Their products make me feel more balanced, energized, and at peace every single day.",
+  "I’ve tried many wellness brands, but nothing compares to Arogya Dhristi. The difference in my mood and focus has been incredible — I feel genuinely renewed.",
+  "Since I started using Arogya Dhristi products, my mind feels clearer and my body lighter. It’s become an essential part of my daily self-care routine.",
+  "Arogya Dhristi has brought such calm and clarity into my life. I notice a real shift in my energy — more positivity, better focus, and deeper relaxation.",
+];
+  const freeTrialRef = useRef(null);
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % testimonials.length);
+    }, 4000); 
+    return () => clearInterval(timer);
+  }, []);
+  const handleScrollToFreeTrial = () => {
+    freeTrialRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <div className="">
       {/* HERO SECTION STARTSx */}
@@ -113,93 +134,116 @@ export default async function FreeTrialClient() {
           </div>
         </div>
       </div> */}
-      <div className="relative min-h-screen bg-[url('/yoga_girl.png')] bg-cover pt-20 md:pt-28 lg:pt-12 flex justify-start">
+
+      <div className="relative min-h-screen bg-[url('/yoga_girl.png')] bg-cover bg-[#f8fafc] pt-20 md:pt-28 lg:pt-12 flex justify-start">
         <div className="absolute inset-0 backdrop-brightness-100"></div>
-        <div className="relative flex flex-col lg:w-1/2 justify-between items-start">
+        <div className="relative flex flex-col lg:w-2/3 xl:w-2/4 justify-between items-start">
           <div className="text-center lg:text-left px-5 lg:pl-16 my-20 xl:pl-20 xl:my-20 md:mx-auto lg:mx-0">
             <p className="text-2xl md:text-5xl lg:text-[3vw] xl:text-[2.7vw] font-bold mb-6 md:mb-[6vw] lg:mb-6 xl:mb-6 text-zinc-700">Mindfulness Made Easy</p>
             <p className="mb-6 md:mb-[7vw] lg:mb-6 xl:mb-8 text-sm md:text-3xl lg:text-[1.5vw] xl:text-lg text-zinc-600 md:max-w-2xl md:mx-auto lg:mx-0 lg:max-w-xs lg:leading-5 xl:max-w-sm">
-        From soothing bath products to calming essential oils, our collection offers everything you need to create peaceful sanctuary in your own home
+        From balanced nutrition to mindful guidance, discover everything you need to transform your health and feel your best every day.
             </p>
             <div className="flex gap-4 xl:gap-6 justify-center lg:justify-start items-center">
-              <button className="text-white bg-sky-600 text-xs md:text-xl lg:text-sm xl:text-sm px-4 py-3 xl:px-6 xl:py-4 rounded-md font-semibold">SHOP NOW</button>
-              <button className="text-gray-900 bg-gray-400 text-xs md:text-xl lg:text-sm xl:text-sm px-4 py-3 xl:px-6 xl:py-4 rounded-md font-semibold">Start Your Journey</button>
+              <button onClick={handleScrollToFreeTrial} className="text-white bg-sky-400 text-xs md:text-xl lg:text-sm xl:text-sm px-4 py-3 xl:px-6 xl:py-4 rounded-md font-semibold">Start Your Journey</button>
             </div>
           </div>
-          <div className="bg-sky-300 px-5 pt-10 pb-5 md:px-14 md:py-20 lg:px-16 lg:py-8 xl:pl-20 xl:py-14 w-full lg:rounded-tr-3xl ring-1 ring-white relative">
-            <Image src="/quote.png" alt="quote" width={500} height={500} className="hidden lg:block w-16 xl:w-20 absolute top-[-43px] xl:top-[-52px] right-10"/>
-            <div className="flex flex-col lg:flex-row justify-start items-center lg:justify-center lg:item-start gap-4">
-              <div className="flex relative w-1/2 lg:w-32 xl:w-28 items-center justify-center lg:justify-start mt-2 lg:mt-0">
-                <Image src="/Ellipse4.png" alt="profile" width={500} height={500} className="w-14 md:w-24 lg:w-32 xl:w-40 rounded-full ring-1 ring-blue-600 absolute left-[5vw] lg:left-0 xl:left-0 xl:top-[-60px]"/>
-                <Image src="/Ellipse5.png" alt="profile" width={500} height={500} className="w-14 md:w-24 lg:w-32 xl:w-40 rounded-full ring-1 ring-blue-600 absolute left-[14vw] lg:left-6 xl:left-10 xl:top-[-60px]"/>
-                <Image src="/Ellipse6.png" alt="profile" width={500} height={500} className="w-14 md:w-24 lg:w-32 xl:w-40 rounded-full ring-1 ring-blue-600 absolute left-[23vw] lg:left-12 xl:left-20 xl:top-[-60px]"/>
-              </div>
-              <p className="text-gray-900 w-full lg:max-w-md xl:max-w-xs text-xs md:text-xl lg:text-[0.8rem] xl:text-[1.05rem] font-medium lg:relative xl:ml-32 lg:ml-20 mt-8 md:mt-14 lg:mt-0 text-center lg:text-left lg:leading-5 xl:leading-6">I have been using Arogya Dhristi products for months now, and they have truly transformed my daily life. I feel calmer, more focused, and overall happier.</p>
-            </div>
+          <div className="bg-sky-300 pt-4 pb-8 md:px-14 md:pb-10 lg:px-16 lg:py-8 xl:pl-20 xl:py-8 w-full lg:rounded-tr-3xl ring-1 ring-white relative">
+                <Image
+                  src="/quote.png"
+                  alt="quote"
+                  width={500}
+                  height={500}
+                  className="hidden lg:block w-16 xl:w-20 absolute top-[-43px] xl:top-[-52px] right-10 xl:right-6"
+                />
+
+                <div className="flex flex-col lg:flex-row justify-start items-center lg:gap-5 xl:gap-20">
+                  <Image
+                    src="/logo-large-light.png" alt="logo" width={500} height={500} className="w-20 md:w-32 lg:w-24 xl:w-32"
+                  />
+                 <div className="overflow-hidden w-full lg:max-w-md xl:max-w-sm mt-2 md:mt-5 lg:mt-0">
+                    <div
+                      className="flex transition-transform duration-700 ease-in-out"
+                      style={{
+                        transform: `translateX(-${current * 100}%)`,
+                      }}
+                    >
+                      {testimonials.map((text, index) => (
+                        <div
+                          key={index}
+                          className="w-full flex-shrink-0 px-2 text-gray-900 text-xs md:text-xl lg:text-[0.8rem] xl:text-[1.05rem] font-medium text-center lg:text-left lg:leading-5 xl:leading-6 italic"
+                        >
+                          {text}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
           </div>
         </div>
         <div className="hidden lg:flex flex-col justify-start items-center pt-16 gap-14 xl:pt-20 xl:gap-16 lg:w-1/2">
-          <div className="rounded-full bg-white ring-2 ring-purple-400 w-24 h-24 xl:w-28 xl:h-28 flex items-center justify-center">
-            <GiThreeLeaves size={70} className="text-purple-400" />
+          <div className="rounded-full bg-white ring-2 ring-sky-300 w-24 h-24 xl:w-28 xl:h-28 flex items-center justify-center">
+            <GiThreeLeaves size={70} className="text-sky-300" />
           </div>
-          <div className="rounded-full bg-white ring-2 ring-purple-400 w-24 h-24 xl:w-28 xl:h-28 flex items-center justify-center">
-            <GoLaw size={70} className="text-purple-400" />
+          <div className="rounded-full bg-white ring-2 ring-sky-300 w-24 h-24 xl:w-28 xl:h-28 flex items-center justify-center">
+            <GoLaw size={70} className="text-sky-300" />
           </div>
-          <div className="rounded-full pt-2 bg-white ring-2 ring-purple-400 w-24 h-24 xl:w-28 xl:h-28 flex items-center justify-center">
-            <FaHeartbeat size={70} className="text-purple-400" />
+          <div className="rounded-full pt-2 bg-white ring-2 ring-sky-300 w-24 h-24 xl:w-28 xl:h-28 flex items-center justify-center">
+            <FaHeartbeat size={70} className="text-sky-300" />
           </div>
         </div>
       </div>
       {/* HERO SECTION ENDS */}
 
-      {/* HOW IT WORKS SECTION STARTS */}
-      <div className="w-full bg-[var(--accent-1)] text-white flex justify-center items-center p-4 pt-8 pb-28 md:p-[4rem] md:pb-32 xl:pb-20 relative">
-        <div className="max-w-[1200px] mx-auto lg:flex flex-row justify-between items-start">
-          <div className="w-full text-center xl:text-left mb-[40px] z-20 relative">
-            <h1 className="text-[32px] md:text-[50px] font-semibold leading-[1] mb-[8px] md:mb-[14px]">
+      <div className="w-full bg-white text-black flex justify-center items-center p-4 pt-8 pb-28 md:p-[4rem] md:pb-32 lg:pb-10 xl:pb-20 relative">
+        <div className="max-w-[1200px] mx-auto lg:flex flex-row justify-between items-start lg:gap-2 xl:gap-0">
+          <div className="w-full text-center lg:text-left mb-[40px] mt-10 z-20 relative">
+            <h1 className="text-[32px] md:text-[50px] lg:text-4xl xl:text-[50px] font-semibold leading-[1] mb-[8px] md:mb-[14px]">
               How it Works
             </h1>
-            <p className="text-[12px] md:text-[20px] max-w-md text-[#D9D9D9] mb-[12px] md:mb-[20px]">
+            <p className="text-[12px] md:text-2xl lg:text-lg lg:max-w-sm xl:max-w-md text-[#222222] mb-[20px] md:mb-[40px] lg:mb-[30px] xl:mb-10">
               See how we understand your problem and make the best suitable plan
               for you
             </p>
             <Link
               href="#register"
-              className="bg-white text-[10px] md:text-[16px] text-[var(--accent-1)] font-semibold cursor-pointer rounded-full px-4 py-2"
+              className="bg-[var(--accent-1)] text-white text-[10px] md:text-[16px] lg:text-sm xl:text-base font-semibold cursor-pointer rounded-full px-4 py-3 md:py-4"
             >
               Start Free Today
             </Link>
-            <div className="flex justify-center xl:absolute xl:left-[-50px]">
+            <div className="flex justify-center lg:absolute lg:left-[-25px] xl:left-[-40px]">
                 <Image
                   src="/logo-large-light.png"
-                  className="mt-5 w-[120px] lg:w-3xl xl:w-60 object-bottom object-contain"
+                  className="mt-8 md:mt-12 w-[120px] lg:w-36 xl:w-60 object-bottom object-contain"
                   height={548}
                   width={548}
                 alt="lightened image of zen fit logo"
                 />
             </div>
-
-
           </div>
-
-          <div className="max-w-[600px] w-full">
+          <div className="max-w-[600px] w-full space-y-[1px]">
             {howItWorks.map((item) => (
-              <div key={item.i} className="min-h-20 pb-[20px] flex gap-4">
-                <div className=" flex flex-col items-center gap-1 relative">
-                  <div className="w-10 h-10 bg-[var(--accent-2)] flex justify-center items-center rounded-full aspect-square z-[100]">
+              <div key={item.i} className="min-h-20 pb-[20px] flex gap-8 xl:gap-6">
+                <div className="hidden md:flex flex-col items-center justify-center gap-1 relative">
+                  <div className="w-10 h-10 bg-[var(--accent-2)] ring-4 ring-white text-white font-bold text-lg flex justify-center items-center rounded-full aspect-square z-[100]">
                     {item.i}
-                  </div>
-                  {item.i <= 3 && (
-                    <div
-                      className={`w-[1px] h-[calc(100%+20px)] absolute top-0 translate-y-4 bg-[var(--accent-2)]`}
-                    />
-                  )}
-                </div>
-                <div className="text-left">
-                  <h1 className="font-semibold text-[15px] md:text-[20px] mb-[4px] md:mb-[10px]">
+                 </div>
+                 {item.i < howItWorks.length && (
+                   <div className="w-[8px] h-[calc(100%+20px)] absolute top-10 translate-y-4 bg-[var(--accent-2)]" />
+                 )}
+               </div>
+               <div
+                 className={`text-left ${
+                   item.i % 2 !== 0 ? "bg-[var(--accent-1)] shadow-md shadow-gray-300" : "bg-transparent ring-1 ring-[var(--accent-1)]"
+        }  pl-6 rounded-xl px-4 py-5`}
+                >
+                  <h1 className={`font-bold ${
+                    item.i % 2 === 0 ? "text-black" : "text-white"
+                    } text-sm md:text-2xl lg:text-base xl:text-lg mb-[4px] md:mb-[8px]`}>
                     {item.h}
                   </h1>
-                  <p className="text-[12px] md:text-[20px] text-[#FFFFFF80] leading-[1.2]">
+                  <p className={`text-[12px] ${
+                    item.i % 2 === 0 ? "text-gray-700" : "text-white"
+                  } md:text-[20px] lg:text-sm xl:text-lg text-[#201f1fe6] leading-[1.2]`}>
                     {item.d}
                   </p>
                 </div>
@@ -210,113 +254,110 @@ export default async function FreeTrialClient() {
       </div>
       {/* HOW IT WORKS SECTION ENDS */}
 
-      {/* TRUSTED PARTNERS SECTION STARTS */}
-      <div className="bg-gradient-to-tr from-[#449B9E1A] via-[#16BA980D] to-[#16A7621A] text-center px-4 py-[3rem] p b-[5rem] gap-3 w-full">
-        <h1 className="text-[var(--accent-1)] font-semibold text-[20px] leading-[1.2]">
-          ABOUT US
-        </h1>
-        <h2 className="text-[24px] md:text-[48px] font-semibold text-center leading-[1.2] mb-[8px] md:mb-[12px]">
-          Your Trusted Partner in Health
-        </h2>
-        <p className="max-w-[60ch] text-sm md:text-[14px] text-center mx-auto mb-[12px] md:mb-[16px]">
-          Arogya Drishti combines the power of science-backed nutrition with
-          personalized guidance to help you reclaim your health and live healthy
-          life.
-        </p>
-        {/* <Link href="/app">
-          <button className="rounded-full text-white bg-[var(--accent-1)] text-sm font-semibold py-2 px-4">
-            Download Now
-          </button>
-        </Link> */}
-        <div className="md:max-w-[1400px] w-full flex flex-wrap justify-center items-start gap-y-8 gap-5 mt-8">
-          {trustedPartners.map((item, index) => (
-            <div
-              key={index}
-              className={`rounded-2xl shadow-md shadow-slate-300 px-4 py-6 bg-gray-50 w-full md:max-w-[23%] flex flex-col items-center cursor-pointer relative ${
-                index === 0
-                  ? "md:mt-0"
-                  : index === 1
-                  ? "md:mt-12"
-                  : index === 2
-                  ? "md:mt-[5rem]"
-                  : "md:mt-4"
-              }`}
-            >
-              <Image
-                src={item.i}
-                alt=" "
-                width={279}
-                height={256}
-                className="w-full object-cover rounded-xl"
-              />
-              <div
-                className={`w-full pt-4 rounded-b-xl text-center leading-[1.2] px-3 pb-2 ${
-                  index === 3 && "hidden"
-                }`}
-              >
-                <h1 className="text-xl md:text-[20px] font-semibold mt-2">
-                  {item.h}
-                </h1>
-                <p className="text-base sm:text-[11px] md:text-[12px] text-gray-500 mt-[4px]">
-                  {item.d}
-                </p>
-              </div>
-              {/* {index === 3 && <div
-                className={"w-full absolute text-white top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center"}>
-                + Many More
-              </div>} */}
-            </div>
-          ))}
-        </div>
-      </div>
-      {/* TRUSTED PARTNERS SECTION END */}
+      <div className="relative overflow-hidden bg-gradient-to-b from-white via-green-50 to-green-100 py-20 px-6 md:px-16">
+          <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-green-200/40 blur-[120px] rounded-full z-0" />
+          <div className="absolute bottom-[-120px] right-[-100px] w-[300px] h-[300px] bg-emerald-200/40 blur-[120px] rounded-full z-0" />
 
-      {/* CLASSES SECTION STARTS */}
-      <div className="hidden w-full h-full bg-[url('/s4.jpeg')] bg-right-bottom bg-cover md:flex flex-col justify-center items-start px-[40px] py-[4rem] gap-6">
-        <div className="max-w-[1200px] mx-auto">
-          <h1 className="text-[28px] md:text-[55px] xl:text-5xl font-extrabold text-left leading-[1.2] text-gray-900 mb-4">
-            Classes for Every Level <br /> and Intention
-          </h1>
-          <p className="text-[12px] md:text-[20px] text-gray-700 md:max-w-[60ch] xl:max-w-[35%] text-left">
-            From beginner-friendly sessions to advanced health workshops, our
-            programs are designed to meet you where you are.
-          </p>
-          <div className="max-w-[1200px] w-full flex flex-wrap justify-between gap-1 mt-[10rem]">
-            {classSection.map((item, index) => (
+          <div className="relative z-10 text-center flex flex-col items-center gap-6 mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[var(--accent-1)] to-lime-500 bg-clip-text text-transparent tracking-tight">
+              About Us
+            </h1>
+            <div className="max-w-3xl text-center space-y-4">
+              <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
+                Your Trusted Partner in Health
+              </h2>
+              <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                Arogya Drishti combines the power of science-backed nutrition with
+        personalized guidance to help you reclaim your health and live a
+                fulfilling life.
+              </p>
+            </div>
+         </div>
+
+          <div className="relative z-10 flex flex-wrap justify-center gap-8 md:gap-10">
+            {trustedPartners.map((item, index) => (
               <div
                 key={index}
-                className="w-[calc(50%-8px)] lg:w-[calc(25%-16px)] rounded-xl bg-white flex flex-col items-start text-left p-6 gap-2 cursor-pointer transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105"
+                className="group bg-white/70 backdrop-blur-xl border border-white/50 shadow-lg shadow-slate-300 ring-2 ring-slate-100 hover:shadow-[0_8px_40px_rgb(0,0,0,0.1)] transition-all duration-300 rounded-3xl p-5 w-full sm:w-[45%] lg:w-[40%] xl:w-[30%] 2xl:w-[25%] flex flex-col items-center"
               >
-                <div className="bg-gray-100 w-[65px] h-[65px] md:w-[55px] md:h-[55px] rounded-xl flex justify-center items-center mb-2 shadow-md border border-gray-300">
-                  <Image
-                    src={item.i}
-                    alt=" "
-                    width={80}
-                    height={80}
-                    className="w-[35px]"
+               <div className="overflow-hidden rounded-2xl w-full">
+                 <Image
+                   src={item.i}
+                    alt={item.h}
+                    width={279}
+                    height={256}
+                    className="w-full h-[200px] object-cover rounded-2xl transform group-hover:scale-105 transition-transform duration-500"
                   />
+               </div>
+               <div className="pt-5 text-center">
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-800">
+                    {item.h}
+                  </h3>
+                  <p className="text-sm text-gray-500 mt-2">{item.d}</p>
                 </div>
-                <h1 className="text-[30px] md:text-base font-semibold mt-2 text-gray-900">
-                  {item.h}
-                </h1>
-                <p className="text-sm text-gray-600 font-medium">
-                  {item.d}
-                </p>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      {/* TRUSTED PARTNERS SECTION END */}
 
-      <div className="md:hidden">
-        <div className="w-full h-full bg-[url('/s4.jpeg')] bg-right-bottom bg-cover flex flex-col justify-center items-start px-6 md:px-[4rem] pb-[50px] gap-4">
-          <h1 className="text-xl font-extrabold leading-[1.2] text-left text-gray-900 mt-12">
-            Classes for Every Level <br /> and Intention
+      {/* CLASSES SECTION STARTS */}
+      <div className="hidden w-full h-full relative md:flex flex-col justify-center items-start px-[40px] py-[4rem] gap-6">
+       <div className="absolute inset-0 bg-[url('/s4.jpeg')] bg-right-bottom bg-cover" />
+       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
+       <div className="relative max-w-[1200px] mx-auto text-white">
+          <h1 className="text-[28px] md:text-[55px] xl:text-5xl font-extrabold text-left leading-[1.2] mb-4">
+           Classes for Every Level <br /> and Intention
           </h1>
-          <p className="text-sm w-52 text-left text-gray-700">
+          <p className="text-[12px] md:text-[20px] text-gray-200 md:max-w-[60ch] xl:max-w-[35%] text-left">
             From beginner-friendly sessions to advanced health workshops, our
             programs are designed to meet you where you are.
           </p>
+
+                <div className="max-w-[1200px] w-full flex flex-wrap justify-between gap-3 md:mt-[4rem] lg:mt-[5rem] xl:mt-[10rem]">
+            {classSection.map((item, index) => (
+              <div
+                key={index}
+                className="w-[calc(50%-8px)] xl:w-[calc(25%-16px)] rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md p-6 flex flex-col items-start text-left gap-3 cursor-pointer transition-all duration-300 hover:scale-[1.05] hover:border-white/40 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+              >
+                <div className="w-[60px] h-[60px] rounded-xl flex justify-center items-center bg-white/10 border border-white/20 mb-3 shadow-inner">
+                  <Image
+                   src={item.i}
+              alt=" "
+                   width={80}
+                   height={80}
+                   className="w-[35px] invert"
+            />
+               </div>
+                <h1 className="text-lg md:text-base font-semibold text-white/90">
+                  {item.h}
+               </h1>
+                <p className="text-sm text-gray-300 font-medium leading-snug">
+                  {item.d}
+                </p>
+              </div>
+      ))}
+          </div>
+        </div>
+      </div>
+      <div className="md:hidden">
+        <div className="relative w-full h-[60vh] overflow-hidden flex items-center justify-start">
+          <div
+            className="absolute inset-0 bg-cover bg-right-bottom brightness-90 scale-105 animate-slowZoom"
+            style={{ backgroundImage: "url('/s4.jpeg')" }}
+          ></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+          <div className="absolute top-[-80px] right-[-80px] w-[250px] h-[250px] bg-emerald-300/25 blur-[100px] rounded-full animate-pulse"></div>
+  <div className="relative z-10 flex flex-col gap-5 px-6 md:px-20 animate-fadeIn">
+            <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight animate-slideUp">
+              Classes for Every Level <br /> and Intention
+            </h1>
+                  
+            <p className="text-base md:text-lg text-gray-200 max-w-sm leading-relaxed animate-slideUp delay-200">
+              From beginner-friendly sessions to advanced health workshops,
+              our programs are designed to meet you where you are.
+            </p>
+          </div>
         </div>
         <div className="w-full flex flex-col justify-between gap-5 p-4 my-5">
           {classSection.map((item, index) => (
@@ -350,56 +391,59 @@ export default async function FreeTrialClient() {
       {/* CLASSES SECTION ENDS */}
 
       {/* WHY CHOOSE SECTION STARTS */}
-      <div className="bg-gradient-to-tr from-[#f0fff4] via-[#eafff0] to-[#f0fff4] px-4 pt-[5rem] pb-[2rem] w-full">
-        <h2 className="text-2xl md:text-[48px] font-semibold text-center leading-[1.2] mb-[8px] md:mb-[12px]">
-          Why Choose Arogya Drishti
-        </h2>
-        <p className="text-base md:text-[14px] xl:text-base text-center text-[#00000080] mx-auto mb-[12px] md:mb-[16px] xl:mb-5">
-          Why you should choose us. Start a step-by-step journey with the
-          support of experts and a like-minded community.
-        </p>
-        <Link href="#register">
-          <button className="rounded-full text-white bg-[var(--accent-2)] text-sm md:text-[16px] xl:text-base font-semibold block mx-auto py-2 px-6">
-            Join us Today
-          </button>
-        </Link>
-        <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row md:flex-wrap justify-center items-start gap-x-4 gap-y-2 md:gap-y-8 md:gap-x-3 xl:gap-x-6 mt-8">
-          {whyChooseSection.map((item, index) => (
-            <div
-              key={index}
-              className="w-full md:w-[calc(33%-24px)] leading-[1.2] text-center mt-4 rounded-2xl ring-[1px] ring-zinc-300 py-6 px-4 shadow-md shadow-zinc-200 md:h-[250px] bg-slate-50"
-            >
-              <div className="bg-transparent w-[100px] h-[100px] rounded-[24px] mx-auto flex justify-center items-center shadow-sm shadow-zinc-200">
-                <Image
-                  src={item.i}
-                  alt=" "
-                  width={70}
-                  height={70}
-                  className="w-[64px] fill-black"
-                />
-              </div>
-              <h1 className="text-base md:text-[20px] xl:text-base font-semibold mt-4 mb-2">
-                {item.h}
-              </h1>
-              <p className="text-sm md:text-[16px] xl:text-base text-[#00000080]">
-                {item.d}
-              </p>
-            </div>
-          ))}
+      <div className="w-full bg-[#ffffff] py-20 px-6 md:px-12 lg:px-20 max-w-[1400px] mx-auto">
+       <div className="max-w-[1300px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-4  leading-tight">
+              <p className="mb-2 text-4xl">Why Choose</p>
+              <span className="text-[var(--accent-2)]">Arogya Drishti</span>
+            </h2>
+      <p className="text-gray-700 text-base md:text-lg mb-8 lg:mb-10 xl:mb-12 max-w-md">
+              Choose us for a step-by-step path to success, backed by professionals
+              and a supportive network.
+            </p>
+            <Link href="#register">
+              <button className="bg-gradient-to-r from-[var(--accent-2)] to-[var(--accent-2)] text-white font-semibold text-sm md:text-base px-8 py-3 rounded-full shadow-md hover:opacity-90 transition-all duration-300">
+               Join Us Today
+             </button>
+           </Link>
+        </div>
+         <div className="flex flex-col gap-5">
+           {whyChooseSection.map((item, index) => (
+             <div key={index} className="flex gap-4 items-start">
+          <div className="flex items-center justify-center w-[56px] h-[56px] bg-transparent ring-1 ring-[var(--accent-2)] rounded-md text-white flex-shrink-0">
+                 <Image
+                   src={item.i}
+                   alt={item.h}
+                   width={28}
+                   height={28}
+                   className="w-[28px] h-[28px]"
+            />
+               </div>
+                <div>
+                  <h3 className="text-base md:text-lg lg:text-base xl:text-lg font-semibold text-gray-900">
+                   {item.h}
+                 </h3>
+                 <p className="text-sm md:text-base lg:text-sm xl:text-base text-gray-700 mt-1">
+                   {item.d}
+                  </p>
+               </div>
+             </div>
+            ))}
+          </div>
         </div>
       </div>
-      {/* WHY CHOOSE SECTION ENDS */}
 
+      {/* WHY CHOOSE SECTION ENDS */}
       {/* SUBSCRIPTION PLANS SECTION STARTS */}
-          
       {/* SUBSCRIPTION PLANS SECTION ENDS */}
       {/* Products */}
       {/* CONNECT SECTION STARTS */}
-      <div className="bg-gradient-to-tr from-[#f0fff4] via-[#eafff0] to-[#f0fff4] flex flex-col justify-center items-center px-4 pt-[20px] pb-[48px] md:py-[80px] xl:pb-40 gap-3 w-full relative overflow-hidden">
-        <h1 className="text-lg md:text-[48px] xl:text-5xl md:mb-5 text-center font-bold mx-auto">
+      <div className="bg-[var(--accent-1)] flex flex-col justify-center items-center px-4 py-20 md:py-[80px] xl:py-20 gap-3 w-full relative overflow-hidden">
+        <h1 className="text-lg text-white md:text-[48px] xl:text-5xl md:mb-5 text-center font-bold mx-auto">
           Connect, Grow, and Thrive Together
         </h1>
-        <p className="text-sm md:text-[14px] xl:text-base md:mb-2 max-w-[60ch] md:max-w-[80ch] text-center mx-auto">
+        <p className="text-sm text-white md:text-[14px] xl:text-base md:mb-2 max-w-[60ch] md:max-w-[80ch] text-center mx-auto">
           Join a thriving community of individuals committed to managing and
           improve health. Share experiences, learn together, and grow stronger.
         </p>
@@ -429,13 +473,14 @@ export default async function FreeTrialClient() {
       {/* CLIENT RESULT SECTION STARTS */}
       <Carousel />
       {/* CLIENT RESULT SECTION ENDS */}
-
-      <FreeTrialCustomerModal />
+      <div ref={freeTrialRef} className="w-full">
+        <FreeTrialCustomerModal />
+       </div> 
 
       {/* FOOTER STARTS */}
-      <footer className="w-full bg-white pb-4 px-[20px]">
-        <div className="max-w-[1200px] mx-auto">
-          <div className="flex gap-4 md:gap-6 lg:gap-0 flex-wrap justify-between py-10 md:py-12 ">
+      <footer className="w-full bg-white">
+        <div className="">
+          <div className="px-[20px] max-w-[1200px] mx-auto flex gap-4 md:gap-6 lg:gap-0 flex-wrap justify-between py-10 md:py-12 ">
             <div className="">
               <Image
                 src="/logo-large-light.png"
@@ -445,17 +490,10 @@ export default async function FreeTrialClient() {
                 className="mb-2 md:mb-4 w-36 md:w-52"
               />
               <div className="flex gap-6 cursor-pointer text-[2rem] text-[var(--accent-2)] ">
-                
-                {/* <Link
-                  target="_blank"
-                  href=""
-                >
-                  <CiLink />
-                </Link> */}
               </div>
             </div>
 
-            <div className="flex flex-col items-start gap-3">
+            <div className="flex flex-col items-start gap-3 lg:mr-10 xl:mr-0">
               <h1 className="md:mb-4 opacity-100 font-bold">Contact us</h1>
               <Link
                 href="mailto:deepikavirender14@gmail.com"
@@ -503,46 +541,44 @@ export default async function FreeTrialClient() {
                 </Link>
              </div>
               {/* <div className="max-w-[60ch] opacity-60 flex items-center gap-3"><FaLocationDot />10540/1 Street no.9 Pratap Nagar near Bhagwan Chowk Ludhiana-141003</div> */}
-             
+               <p className="text-[16px] flex item-center justify-center md:justify-start gap-2 mt-4">
+                  <span className="opacity-80">Made with</span>❤️
+                  <span className="opactiy-80">by</span>
+                  <Image
+                      src="/wlogo.svg"
+                      width={100}
+                      height={40}
+                      alt="WellnessZ"
+                      className="pb-3"
+                    />
+                  <span className="opacity-80">in India</span>
+                  <Image
+                    src="/india.png"
+                    width={15}
+                    height={10}
+                    alt=""
+                    className="pb-3"
+                  />
+                </p>
             </div>
           </div>
 
-          <p className="text-[16px] flex item-center justify-center md:justify-start gap-2">
-            <span className="opacity-80">Made with</span>❤️
-            <span className="opactiy-80">by</span>
-            <Image
-              src="/wlogo.svg"
-              width={100}
-              height={40}
-              alt="WellnessZ"
-              className="pb-3"
-            />
-            <span className="opacity-80">in India</span>
-            <Image
-              src="/india.png"
-              width={15}
-              height={10}
-              alt=""
-              className="pb-3"
-            />
-          </p>
-
-          <div className="flex flex-col md:flex-row gap-2 items-center justify-between border-t-2 pt-4 border-gray-500">
-            <p className="opacity-60 text-sm md:text-base lg:">
+          <div className="flex flex-col text-white  px-[20px] xl:px-40 md:flex-row gap-2 items-center justify-between  pt-4 bg-[var(--accent-1)] pb-4">
+            <p className="text-sm md:text-base">
               Copyright © 2023 Mohi Lifestile Solutions Pvt Ltd.
             </p>
             <div className="flex flex-col md:flex-row gap-2 items-center justify-center">
-              <span className="px-2 opacity-70">All Rights Reserved</span>
+              <span className="px-2">All Rights Reserved</span>
               <div className="text-[0.7rem] md:text-[0.8rem]">
                 <Link
                   href="/terms-and-conditions"
-                  className="text-[var(--accent-1)] px-2 border-x-2 cursor-pointer border-gray-500"
+                  className="px-2 border-x-2 cursor-pointer border-white"
                 >
                   Terms and Conditions
                 </Link>
                 <Link
                   href="/privacy-policy"
-                  className="text-[var(--accent-1)] px-2 cursor-pointer "
+                  className="px-2 cursor-pointer"
                 >
                   Privacy Policy
                 </Link>

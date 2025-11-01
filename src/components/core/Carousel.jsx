@@ -58,7 +58,7 @@ export default function Carousel() {
   };
 
   return (
-    <div className="w-full flex flex-col p-4 pt-20 md:pt-32 bg-gradient-to-tr from-[#FF61001A] via-[#16BA980D] to-[#0062311A]">
+    <div className="w-full flex flex-col p-4 pt-20 md:pt-32 bg-white">
       <div className="w-full flex justify-between">
         <div className="w-full md:w-[60%] mx-auto flex flex-col gap-3 z-30">
           <h1 className="text-2xl md:text-4xl font-semibold text-center w-full">
@@ -79,7 +79,7 @@ export default function Carousel() {
                 &#8594;
               </button> */}
             </div>
-            <p className="text-base xl:text-lg text-center text-zinc-600">
+            <p className="text-base xl:text-lg max-w-4xl text-center text-zinc-600">
               Experience the best wellness transformations through our
               community-driven support and personal coaching.
             </p>

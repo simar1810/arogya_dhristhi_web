@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -9,6 +9,13 @@ import { wellnessResults } from "@/utils/data";
 export default function Carousel() {
   const sliderRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
 
   const next = () => {
     if (sliderRef.current) {
@@ -31,6 +38,10 @@ export default function Carousel() {
     speed: 500,
     autoplay: true,
     autoplaySpeed: 2000,
+    cssEase: "linear",
+    pauseOnHover: false,
+    pauseOnFocus: false,
+    pauseOnDotsHover: false,
     beforeChange: (oldIndex, newIndex) => setActiveIndex(newIndex),
     responsive: [
       {
@@ -86,7 +97,7 @@ export default function Carousel() {
           </div>
         </div>
       </div>
-
+    {isMounted && (
       <Slider
         ref={sliderRef}
         {...settings}
@@ -113,6 +124,7 @@ export default function Carousel() {
           );
         })}
       </Slider>
+    )}
       <p className="font-medium text-center mt-8 mb-20 md:mb-32 text-sm md:text-base xl:text-xl italic text-zinc-400">
         <span className="font-semibold">Disclaimer:</span> Results are not typical Individual results may vary
       </p>

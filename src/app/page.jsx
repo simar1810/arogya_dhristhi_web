@@ -1,5 +1,6 @@
 "use client"
 import Carousel from "@/components/core/Carousel";
+import React from "react";
 import {
   classSection,
   howItWorks,
@@ -40,19 +41,19 @@ export default function FreeTrialClient() {
     "/profile.webp",
   ]
   const testimonials = [
-  "I have been using Arogya Dhristi products for months now, and they have truly transformed my daily life. I feel calmer, more focused, and overall happier.",
-  "Arogya Dhristi has completely changed the way I approach wellness. Their products make me feel more balanced, energized, and at peace every single day.",
-  "I’ve tried many wellness brands, but nothing compares to Arogya Dhristi. The difference in my mood and focus has been incredible — I feel genuinely renewed.",
-  "Since I started using Arogya Dhristi products, my mind feels clearer and my body lighter. It’s become an essential part of my daily self-care routine.",
-  "Arogya Dhristi has brought such calm and clarity into my life. I notice a real shift in my energy — more positivity, better focus, and deeper relaxation.",
-];
+    "I have been using Arogya Dhristi products for months now, and they have truly transformed my daily life. I feel calmer, more focused, and overall happier.",
+    "Arogya Dhristi has completely changed the way I approach wellness. Their products make me feel more balanced, energized, and at peace every single day.",
+    "I’ve tried many wellness brands, but nothing compares to Arogya Dhristi. The difference in my mood and focus has been incredible — I feel genuinely renewed.",
+    "Since I started using Arogya Dhristi products, my mind feels clearer and my body lighter. It’s become an essential part of my daily self-care routine.",
+    "Arogya Dhristi has brought such calm and clarity into my life. I notice a real shift in my energy — more positivity, better focus, and deeper relaxation.",
+  ];
   const freeTrialRef = useRef(null);
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % testimonials.length);
-    }, 4000); 
+    }, 4000);
     return () => clearInterval(timer);
   }, []);
   const handleScrollToFreeTrial = () => {
@@ -135,8 +136,17 @@ export default function FreeTrialClient() {
         </div>
       </div> */}
 
-      <div className="relative min-h-screen bg-[url('/yoga_girl.png')] bg-cover bg-[#f8fafc] pt-20 md:pt-28 lg:pt-12 flex justify-start">
-        <div className="absolute inset-0 backdrop-brightness-100"></div>
+      {/* <div className="relative min-h-screen overflow-hidden pt-20 md:pt-28 lg:pt-12 flex justify-start">
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/yoga_girl.png"
+          alt="Background Yoga Girl"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="80vw"
+        />
+      </div>
         <div className="relative flex flex-col lg:w-2/3 xl:w-2/4 justify-between items-start">
           <div className="text-center lg:text-left px-5 lg:pl-16 my-20 xl:pl-20 xl:my-20 md:mx-auto lg:mx-0">
             <p className="text-2xl md:text-5xl lg:text-[3vw] xl:text-[2.7vw] font-bold mb-6 md:mb-[6vw] lg:mb-6 xl:mb-6 text-zinc-700">Mindfulness Made Easy</p>
@@ -144,10 +154,10 @@ export default function FreeTrialClient() {
         From balanced nutrition to mindful guidance, discover everything you need to transform your health and feel your best every day.
             </p>
             <div className="flex gap-4 xl:gap-6 justify-center lg:justify-start items-center">
-              <button onClick={handleScrollToFreeTrial} className="text-white bg-sky-400 text-xs md:text-xl lg:text-sm xl:text-sm px-4 py-3 xl:px-6 xl:py-4 rounded-md font-semibold">Start Your Journey</button>
+              <button onClick={handleScrollToFreeTrial} className="text-white bg-[var(--accent-1)] text-xs md:text-xl lg:text-sm xl:text-sm px-4 py-3 xl:px-6 xl:py-4 rounded-md font-semibold">Start Your Journey</button>
             </div>
           </div>
-          <div className="bg-sky-300 pt-4 pb-8 md:px-14 md:pb-10 lg:px-16 lg:py-8 xl:pl-20 xl:py-8 w-full lg:rounded-tr-3xl ring-1 ring-white relative">
+          <div className="bg-green-300 pt-4 pb-8 md:px-14 md:pb-10 lg:px-16 lg:py-8 xl:pl-20 xl:py-8 w-full lg:rounded-tr-3xl ring-1 ring-white relative">
                 <Image
                   src="/quote.png"
                   alt="quote"
@@ -181,20 +191,91 @@ export default function FreeTrialClient() {
           </div>
         </div>
         <div className="hidden lg:flex flex-col justify-start items-center pt-16 gap-14 xl:pt-20 xl:gap-16 lg:w-1/2">
-          <div className="rounded-full bg-white ring-2 ring-sky-300 w-24 h-24 xl:w-28 xl:h-28 flex items-center justify-center">
-            <GiThreeLeaves size={70} className="text-sky-300" />
+          <div className="rounded-full bg-white ring-2 ring-green-400 w-24 h-24 xl:w-28 xl:h-28 flex items-center justify-center">
+            <GiThreeLeaves size={70} className="text-green-400" />
           </div>
-          <div className="rounded-full bg-white ring-2 ring-sky-300 w-24 h-24 xl:w-28 xl:h-28 flex items-center justify-center">
-            <GoLaw size={70} className="text-sky-300" />
+          <div className="rounded-full bg-white ring-2 ring-green-400 w-24 h-24 xl:w-28 xl:h-28 flex items-center justify-center">
+            <GoLaw size={70} className="text-green-400" />
           </div>
-          <div className="rounded-full pt-2 bg-white ring-2 ring-sky-300 w-24 h-24 xl:w-28 xl:h-28 flex items-center justify-center">
-            <FaHeartbeat size={70} className="text-sky-300" />
+          <div className="rounded-full pt-2 bg-white ring-2 ring-green-400 w-24 h-24 xl:w-28 xl:h-28 flex items-center justify-center">
+            <FaHeartbeat size={70} className="text-green-400" />
           </div>
+        </div>
+      </div> */}
+
+      <div className="bg-[#FAFAFA] pt-10 md:pt-16 pb-8 md:pb-0 overflow-hidden">
+
+        <div className="relative z-10 max-w-[1200px] mx-auto mb-10 sm:mb-0 md:pb-10 px-6 sm:px-10 md:px-8 lg:px-10 xl:px-0">
+          <Image
+            src="/bg-frame.png"
+            alt="bg-img"
+            width={500}
+            height={500}
+            className="hidden md:block absolute w-full md:w-3xl lg:w-3/4 xl:w-4xl bottom-0 right-[-100px] xl:right-[-150px] object-cover lg:object-contain transition-all duration-500"
+          />
+          <Image
+            src="/logo-large-light.png"
+            alt="logo"
+            width={500}
+            height={500}
+            className="mx-auto md:mx-0 w-32 lg:w-34 xl:w-36 mb-4 lg:mb-6 xl:mb-2 relative"
+          />
+
+          <div className="flex flex-col items-center md:items-start justify-start gap-6 md:gap-7 lg:gap-8 w-full md:w-[54%] lg:w-[80%] xl:w-2xl relative">
+            <p className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-[#3D3D3D] font-semibold leading-snug xl:leading-[4.5rem] text-shadow-lg max-w-2xl">
+              Your Trusted Partner in Lifelong Wellness
+            </p>
+            <p className="text-center md:text-left text-sm md:text-base md:w-2xs lg:w-auto lg:text-lg font-medium text-[#494848]">
+              Empowering You with Nutrition, Balance & Lasting Health
+            </p>
+            <button onClick={handleScrollToFreeTrial} className="px-5 md:px-6 py-3 rounded-full bg-[var(--accent-1)] text-white text-base sm:text-sm lg:text-lg font-semibold transition-all flex items-center">
+                 <span>Consult Now</span>
+            </button>
+          </div>
+        </div>
+
+
+        <div className="flex flex-col md:flex-row max-w-[1200px] mx-auto items-start md:items-center justify-start md:justify-between lg:justify-start gap-6 md:gap-0 px-6 sm:px-10 xl:px-0 py-4 md:py-5 lg:py-6 relative">
+          <div className="w-full md:w-sm lg:w-2/3 md:pb-0 md:pr-4 xl:pr-6">
+            <p className="text-lg font-bold mb-1 text-[#3D3D3D] text-center md:text-left">Our Service</p>
+            <p className="text-xs sm:text-sm md:text-xs lg:text-base font-normal leading-5 sm:leading-6 text-[#494848] md:leading-5 lg:leading-6 sm:w-11/12 md:w-[30vw] xl:w-[20vw] text-center md:text-left">
+              We offer expert guidance to help you achieve balanced nutrition, improve wellness, and live a healthier lifestyle every day.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-3 justify-start items-start sm:items-center md:border-l-[1px] md:pl-4 lg:pl-6 border-[#909090] gap-7 md:gap-[2.5vw] lg:gap-5 xl:gap-7 w-full">
+            {[
+              { icon: "/diet.png", text: "Customized \nNutrition Guidance" },
+              { icon: "/wellness.png", text: "Personalized \nDiet Plans For You" },
+              { icon: "/machine.png", text: "Weight \nManagement Support" },
+              { icon: "/machine.png", text: "Progress Tracking \n& Health Reports" },
+              { icon: "/machine.png", text: "Fitness Challenges\n & Community Programs" },
+              { icon: "/machine.png", text: "Live Coaching & \nAccountability Session" },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="flex-shrink-0 flex flex-col md:flex-row  md:gap-4 items-start min-w-[120px] sm:min-w-[140px] md:min-w-[150px] lg:min-w-0 w-auto"
+              >
+                <div className="rounded-lg bg-[var(--accent-2)] p-2 w-10 h-10 mb-2 flex items-center justify-center">
+                  <Image src={item.icon} alt="icon" width={100} height={100} className="w-7 sm:w-8" />
+                </div>
+                <p className="text-xs sm:text-sm md:text-[0.63rem] text-left xl:text-sm font-medium text-[#282828] leading-snug">
+                  {item.text.split("\n").map((line, idx) => (
+                    <React.Fragment key={idx}>
+                      {line}
+                      <br />
+                    </React.Fragment>
+                  ))}
+                </p>
+              </div>
+            ))}
+          </div>
+
         </div>
       </div>
       {/* HERO SECTION ENDS */}
 
-      <div className="w-full bg-white text-black flex justify-center items-center p-4 pt-8 pb-28 md:p-[4rem] md:pb-32 lg:pb-10 xl:pb-20 relative">
+      <div className="w-full bg-white text-black flex justify-center items-center p-4 pt-8 lg:pt-28 pb-28 md:p-[4rem] md:pb-32 lg:pb-10 xl:pb-20 relative">
         <div className="max-w-[1200px] mx-auto lg:flex flex-row justify-between items-start lg:gap-2 xl:gap-0">
           <div className="w-full text-center lg:text-left mb-[40px] mt-10 z-20 relative">
             <h1 className="text-[32px] md:text-[50px] lg:text-4xl xl:text-[50px] font-semibold leading-[1] mb-[8px] md:mb-[14px]">
@@ -211,13 +292,13 @@ export default function FreeTrialClient() {
               Start Free Today
             </Link>
             <div className="flex justify-center lg:absolute lg:left-[-25px] xl:left-[-40px]">
-                <Image
-                  src="/logo-large-light.png"
-                  className="mt-8 md:mt-12 w-[120px] lg:w-36 xl:w-60 object-bottom object-contain"
-                  height={548}
-                  width={548}
+              <Image
+                src="/logo-large-light.png"
+                className="mt-8 md:mt-12 w-[120px] lg:w-36 xl:w-60 object-bottom object-contain"
+                height={548}
+                width={548}
                 alt="lightened image of zen fit logo"
-                />
+              />
             </div>
           </div>
           <div className="max-w-[600px] w-full space-y-[1px]">
@@ -226,24 +307,21 @@ export default function FreeTrialClient() {
                 <div className="hidden md:flex flex-col items-center justify-center gap-1 relative">
                   <div className="w-10 h-10 bg-[var(--accent-2)] ring-4 ring-white text-white font-bold text-lg flex justify-center items-center rounded-full aspect-square z-[100]">
                     {item.i}
-                 </div>
-                 {item.i < howItWorks.length && (
-                   <div className="w-[8px] h-[calc(100%+20px)] absolute top-10 translate-y-4 bg-[var(--accent-2)]" />
-                 )}
-               </div>
-               <div
-                 className={`text-left ${
-                   item.i % 2 !== 0 ? "bg-[var(--accent-1)] shadow-md shadow-gray-300" : "bg-transparent ring-1 ring-[var(--accent-1)]"
-        }  pl-6 rounded-xl px-4 py-5`}
+                  </div>
+                  {item.i < howItWorks.length && (
+                    <div className="w-[8px] h-[calc(100%+20px)] absolute top-10 translate-y-4 bg-[var(--accent-2)]" />
+                  )}
+                </div>
+                <div
+                  className={`text-left ${item.i % 2 !== 0 ? "bg-[var(--accent-1)] shadow-md shadow-gray-300" : "bg-transparent ring-1 ring-[var(--accent-1)]"
+                    }  pl-6 rounded-xl px-4 py-5`}
                 >
-                  <h1 className={`font-bold ${
-                    item.i % 2 === 0 ? "text-black" : "text-white"
+                  <h1 className={`font-bold ${item.i % 2 === 0 ? "text-black" : "text-white"
                     } text-sm md:text-2xl lg:text-base xl:text-lg mb-[4px] md:mb-[8px]`}>
                     {item.h}
                   </h1>
-                  <p className={`text-[12px] ${
-                    item.i % 2 === 0 ? "text-gray-700" : "text-white"
-                  } md:text-[20px] lg:text-sm xl:text-lg text-[#201f1fe6] leading-[1.2]`}>
+                  <p className={`text-[12px] ${item.i % 2 === 0 ? "text-gray-700" : "text-white"
+                    } md:text-[20px] lg:text-sm xl:text-lg text-[#201f1fe6] leading-[1.2]`}>
                     {item.d}
                   </p>
                 </div>
@@ -255,66 +333,66 @@ export default function FreeTrialClient() {
       {/* HOW IT WORKS SECTION ENDS */}
 
       <div className="relative overflow-hidden bg-gradient-to-b from-white via-green-50 to-green-100 py-20 px-6 md:px-16">
-          <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-green-200/40 blur-[120px] rounded-full z-0" />
-          <div className="absolute bottom-[-120px] right-[-100px] w-[300px] h-[300px] bg-emerald-200/40 blur-[120px] rounded-full z-0" />
+        <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-green-200/40 blur-[120px] rounded-full z-0" />
+        <div className="absolute bottom-[-120px] right-[-100px] w-[300px] h-[300px] bg-emerald-200/40 blur-[120px] rounded-full z-0" />
 
-          <div className="relative z-10 text-center flex flex-col items-center gap-6 mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[var(--accent-1)] to-lime-500 bg-clip-text text-transparent tracking-tight">
-              About Us
-            </h1>
-            <div className="max-w-3xl text-center space-y-4">
-              <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
-                Your Trusted Partner in Health
-              </h2>
-              <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-                Arogya Drishti combines the power of science-backed nutrition with
-        personalized guidance to help you reclaim your health and live a
-                fulfilling life.
-              </p>
-            </div>
-         </div>
-
-          <div className="relative z-10 flex flex-wrap justify-center gap-8 md:gap-10">
-            {trustedPartners.map((item, index) => (
-              <div
-                key={index}
-                className="group bg-white/70 backdrop-blur-xl border border-white/50 shadow-lg shadow-slate-300 ring-2 ring-slate-100 hover:shadow-[0_8px_40px_rgb(0,0,0,0.1)] transition-all duration-300 rounded-3xl p-5 w-full sm:w-[45%] lg:w-[40%] xl:w-[30%] 2xl:w-[25%] flex flex-col items-center"
-              >
-               <div className="overflow-hidden rounded-2xl w-full">
-                 <Image
-                   src={item.i}
-                    alt={item.h}
-                    width={279}
-                    height={256}
-                    className="w-full h-[200px] object-cover rounded-2xl transform group-hover:scale-105 transition-transform duration-500"
-                  />
-               </div>
-               <div className="pt-5 text-center">
-                  <h3 className="text-lg md:text-xl font-semibold text-gray-800">
-                    {item.h}
-                  </h3>
-                  <p className="text-sm text-gray-500 mt-2">{item.d}</p>
-                </div>
-              </div>
-            ))}
+        <div className="relative z-10 text-center flex flex-col items-center gap-6 mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[var(--accent-1)] to-lime-500 bg-clip-text text-transparent tracking-tight">
+            About Us
+          </h1>
+          <div className="max-w-3xl text-center space-y-4">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
+              Your Trusted Partner in Health
+            </h2>
+            <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+              Arogya Drishti combines the power of science-backed nutrition with
+              personalized guidance to help you reclaim your health and live a
+              fulfilling life.
+            </p>
           </div>
         </div>
+
+        <div className="relative z-10 flex flex-wrap justify-center gap-8 md:gap-10">
+          {trustedPartners.map((item, index) => (
+            <div
+              key={index}
+              className="group bg-white/70 backdrop-blur-xl border border-white/50 shadow-lg shadow-slate-300 ring-2 ring-slate-100 hover:shadow-[0_8px_40px_rgb(0,0,0,0.1)] transition-all duration-300 rounded-3xl p-5 w-full sm:w-[45%] lg:w-[40%] xl:w-[30%] 2xl:w-[25%] flex flex-col items-center"
+            >
+              <div className="overflow-hidden rounded-2xl w-full">
+                <Image
+                  src={item.i}
+                  alt={item.h}
+                  width={279}
+                  height={256}
+                  className="w-full h-[200px] object-cover rounded-2xl transform group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="pt-5 text-center">
+                <h3 className="text-lg md:text-xl font-semibold text-gray-800">
+                  {item.h}
+                </h3>
+                <p className="text-sm text-gray-500 mt-2">{item.d}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
       {/* TRUSTED PARTNERS SECTION END */}
 
       {/* CLASSES SECTION STARTS */}
       <div className="hidden w-full h-full relative md:flex flex-col justify-center items-start px-[40px] py-[4rem] gap-6">
-       <div className="absolute inset-0 bg-[url('/s4.jpeg')] bg-right-bottom bg-cover" />
-       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
-       <div className="relative max-w-[1200px] mx-auto text-white">
+        <div className="absolute inset-0 bg-[url('/s4.jpeg')] bg-right-bottom bg-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
+        <div className="relative max-w-[1200px] mx-auto text-white">
           <h1 className="text-[28px] md:text-[55px] xl:text-5xl font-extrabold text-left leading-[1.2] mb-4">
-           Classes for Every Level <br /> and Intention
+            Classes for Every Level <br /> and Intention
           </h1>
           <p className="text-[12px] md:text-[20px] text-gray-200 md:max-w-[60ch] xl:max-w-[35%] text-left">
             From beginner-friendly sessions to advanced health workshops, our
             programs are designed to meet you where you are.
           </p>
 
-                <div className="max-w-[1200px] w-full flex flex-wrap justify-between gap-3 md:mt-[4rem] lg:mt-[5rem] xl:mt-[10rem]">
+          <div className="max-w-[1200px] w-full flex flex-wrap justify-between gap-3 md:mt-[4rem] lg:mt-[5rem] xl:mt-[10rem]">
             {classSection.map((item, index) => (
               <div
                 key={index}
@@ -322,21 +400,21 @@ export default function FreeTrialClient() {
               >
                 <div className="w-[60px] h-[60px] rounded-xl flex justify-center items-center bg-white/10 border border-white/20 mb-3 shadow-inner">
                   <Image
-                   src={item.i}
-              alt=" "
-                   width={80}
-                   height={80}
-                   className="w-[35px] invert"
-            />
-               </div>
+                    src={item.i}
+                    alt=" "
+                    width={80}
+                    height={80}
+                    className="w-[35px] invert"
+                  />
+                </div>
                 <h1 className="text-lg md:text-base font-semibold text-white/90">
                   {item.h}
-               </h1>
+                </h1>
                 <p className="text-sm text-gray-300 font-medium leading-snug">
                   {item.d}
                 </p>
               </div>
-      ))}
+            ))}
           </div>
         </div>
       </div>
@@ -348,11 +426,11 @@ export default function FreeTrialClient() {
           ></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
           <div className="absolute top-[-80px] right-[-80px] w-[250px] h-[250px] bg-emerald-300/25 blur-[100px] rounded-full animate-pulse"></div>
-  <div className="relative z-10 flex flex-col gap-5 px-6 md:px-20 animate-fadeIn">
+          <div className="relative z-10 flex flex-col gap-5 px-6 md:px-20 animate-fadeIn">
             <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight animate-slideUp">
               Classes for Every Level <br /> and Intention
             </h1>
-                  
+
             <p className="text-base md:text-lg text-gray-200 max-w-sm leading-relaxed animate-slideUp delay-200">
               From beginner-friendly sessions to advanced health workshops,
               our programs are designed to meet you where you are.
@@ -366,9 +444,8 @@ export default function FreeTrialClient() {
               className={`rounded-xl text-left p-5 gap-2 cursor-pointer shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 w-full 
         ${index % 2 === 0 ? 'bg-white' : 'bg-blue-50'}`}
             >
-              <div className={`${
-          index % 2 === 0 ? 'bg-gray-100 border-gray-300' : 'bg-blue-100 border-blue-300'
-        } w-[60px] h-[60px] md:w-[50px] md:h-[50px] rounded-xl flex justify-center items-center mb-4 shadow-md border`}>
+              <div className={`${index % 2 === 0 ? 'bg-gray-100 border-gray-300' : 'bg-blue-100 border-blue-300'
+                } w-[60px] h-[60px] md:w-[50px] md:h-[50px] rounded-xl flex justify-center items-center mb-4 shadow-md border`}>
                 <Image
                   src={item.i}
                   alt=" "
@@ -392,43 +469,43 @@ export default function FreeTrialClient() {
 
       {/* WHY CHOOSE SECTION STARTS */}
       <div className="w-full bg-[#ffffff] py-20 px-6 md:px-12 lg:px-20 max-w-[1400px] mx-auto">
-       <div className="max-w-[1300px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div className="max-w-[1300px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
             <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-4  leading-tight">
               <p className="mb-2 text-4xl">Why Choose</p>
               <span className="text-[var(--accent-2)]">Arogya Drishti</span>
             </h2>
-      <p className="text-gray-700 text-base md:text-lg mb-8 lg:mb-10 xl:mb-12 max-w-md">
+            <p className="text-gray-700 text-base md:text-lg mb-8 lg:mb-10 xl:mb-12 max-w-md">
               Choose us for a step-by-step path to success, backed by professionals
               and a supportive network.
             </p>
             <Link href="#register">
               <button className="bg-gradient-to-r from-[var(--accent-2)] to-[var(--accent-2)] text-white font-semibold text-sm md:text-base px-8 py-3 rounded-full shadow-md hover:opacity-90 transition-all duration-300">
-               Join Us Today
-             </button>
-           </Link>
-        </div>
-         <div className="flex flex-col gap-5">
-           {whyChooseSection.map((item, index) => (
-             <div key={index} className="flex gap-4 items-start">
-          <div className="flex items-center justify-center w-[56px] h-[56px] bg-transparent ring-1 ring-[var(--accent-2)] rounded-md text-white flex-shrink-0">
-                 <Image
-                   src={item.i}
-                   alt={item.h}
-                   width={28}
-                   height={28}
-                   className="w-[28px] h-[28px]"
-            />
-               </div>
+                Join Us Today
+              </button>
+            </Link>
+          </div>
+          <div className="flex flex-col gap-5">
+            {whyChooseSection.map((item, index) => (
+              <div key={index} className="flex gap-4 items-start">
+                <div className="flex items-center justify-center w-[56px] h-[56px] bg-transparent ring-1 ring-[var(--accent-2)] rounded-md text-white flex-shrink-0">
+                  <Image
+                    src={item.i}
+                    alt={item.h}
+                    width={28}
+                    height={28}
+                    className="w-[28px] h-[28px]"
+                  />
+                </div>
                 <div>
                   <h3 className="text-base md:text-lg lg:text-base xl:text-lg font-semibold text-gray-900">
-                   {item.h}
-                 </h3>
-                 <p className="text-sm md:text-base lg:text-sm xl:text-base text-gray-700 mt-1">
-                   {item.d}
+                    {item.h}
+                  </h3>
+                  <p className="text-sm md:text-base lg:text-sm xl:text-base text-gray-700 mt-1">
+                    {item.d}
                   </p>
-               </div>
-             </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -475,7 +552,7 @@ export default function FreeTrialClient() {
       {/* CLIENT RESULT SECTION ENDS */}
       <div ref={freeTrialRef} className="w-full">
         <FreeTrialCustomerModal />
-       </div> 
+      </div>
 
       {/* FOOTER STARTS */}
       <footer className="w-full bg-white">
@@ -516,50 +593,50 @@ export default function FreeTrialClient() {
               </Link>
               <div className="flex items-center justify-start gap-4">
                 <Link
-                href="https://www.instagram.com/deepikavirender_?igsh=MWk3Zzk0c2ZibTY2ag%3D%3D"
-                className="opacity-60 flex items-center gap-3"
-              >
-                <FaSquareInstagram />
+                  href="https://www.instagram.com/deepikavirender_?igsh=MWk3Zzk0c2ZibTY2ag%3D%3D"
+                  className="opacity-60 flex items-center gap-3"
+                >
+                  <FaSquareInstagram />
                 </Link>
                 <Link
-                href="https://www.facebook.com/share/1EbUkyN3Jh/?mibextid=wwXIfr"
-                className="opacity-60 flex items-center gap-3"
-              >
-                <FaFacebookF  /> 
+                  href="https://www.facebook.com/share/1EbUkyN3Jh/?mibextid=wwXIfr"
+                  className="opacity-60 flex items-center gap-3"
+                >
+                  <FaFacebookF />
                 </Link>
                 <Link
-                href="https://x.com/arogyadrishtii?s=21"
-                className="opacity-60 flex items-center gap-3"
-              >
-                <FaXTwitter />
+                  href="https://x.com/arogyadrishtii?s=21"
+                  className="opacity-60 flex items-center gap-3"
+                >
+                  <FaXTwitter />
                 </Link>
                 <Link
-                href="https://youtube.com/@arogyadrishti?si=zMnUCVeL3Et9Pueg"
-                className="opacity-60 flex items-center gap-3"
-              >
-                <FaYoutube />
+                  href="https://youtube.com/@arogyadrishti?si=zMnUCVeL3Et9Pueg"
+                  className="opacity-60 flex items-center gap-3"
+                >
+                  <FaYoutube />
                 </Link>
-             </div>
+              </div>
               {/* <div className="max-w-[60ch] opacity-60 flex items-center gap-3"><FaLocationDot />10540/1 Street no.9 Pratap Nagar near Bhagwan Chowk Ludhiana-141003</div> */}
-               <p className="text-[16px] flex item-center justify-center md:justify-start gap-2 mt-4">
-                  <span className="opacity-80">Made with</span>❤️
-                  <span className="opactiy-80">by</span>
-                  <Image
-                      src="/wlogo.svg"
-                      width={100}
-                      height={40}
-                      alt="WellnessZ"
-                      className="pb-3"
-                    />
-                  <span className="opacity-80">in India</span>
-                  <Image
-                    src="/india.png"
-                    width={15}
-                    height={10}
-                    alt=""
-                    className="pb-3"
-                  />
-                </p>
+              <p className="text-[16px] flex item-center justify-center md:justify-start gap-2 mt-4">
+                <span className="opacity-80">Made with</span>❤️
+                <span className="opactiy-80">by</span>
+                <Image
+                  src="/wlogo.svg"
+                  width={100}
+                  height={40}
+                  alt="WellnessZ"
+                  className="pb-3"
+                />
+                <span className="opacity-80">in India</span>
+                <Image
+                  src="/india.png"
+                  width={15}
+                  height={10}
+                  alt=""
+                  className="pb-3"
+                />
+              </p>
             </div>
           </div>
 

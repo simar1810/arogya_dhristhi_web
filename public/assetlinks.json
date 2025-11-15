@@ -1,0 +1,15 @@
+[
+    {
+      "relation": [
+        "delegate_permission/common.handle_all_urls",
+        "delegate_permission/common.get_login_creds"
+      ],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.wellnessz.deepika",
+        "sha256_cert_fingerprints": [
+          "C9:E2:21:A4:53:11:C1:A1:2C:4D:2D:FE:50:9E:AF:BE:6C:6A:08:C7:30:1E:1D:01:03:F2:4D:D5:8A:D1:FF:B9"
+        ]
+      }
+    }
+  ]
